@@ -1,0 +1,47 @@
+.details-wrapper{
+    max-width: 900px;
+    margin: 20px auto;
+    position: relative;
+}
+::ng-deep mwl-gauge{
+    width: 150px;
+    height: 150px;
+    display: block;
+    padding: 10px;
+}
+mwl-gauge .dial{
+    stroke-width: 10;
+}
+.game{
+    &-banner{
+        height: 442px;
+        overflow: hidden;
+        border: 1px solid white;
+    }
+    &-banner img{
+        width: 100%;
+        filter: blur(5px);
+    }
+    &-content{
+        text-align: center;
+        position: relative;
+        top:-200px;
+    }
+&-header-title{
+    font-size: 70px;
+    color: white;
+    font-weight: 700;
+    line-height: 70px;
+    white-space: nowrap;
+}
+&-header-release-date{
+    color: white;
+    font-weight: 700;
+
+}
+&-header-genres{
+    color: white;
+    font-weight: 700;
+    
+}
+}
