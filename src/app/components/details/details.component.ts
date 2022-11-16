@@ -16,7 +16,11 @@ export class DetailsComponent implements OnInit {
  game!:Game;
  private routeSub:Subscription=new Subscription;
  private gameSub:Subscription=new Subscription;
-  constructor(private httpService:HttpService, private activatedRoute:ActivatedRoute, private router:Router) { }
+  constructor(
+    private httpService:HttpService, 
+    private activatedRoute:ActivatedRoute, 
+    private router:Router
+  ) { }
 
   ngOnInit() {
     this.routeSub=this.activatedRoute.params.subscribe((params:Params)=>{
@@ -26,6 +30,7 @@ export class DetailsComponent implements OnInit {
   }
   gameDetails(id:string){
     this.gameSub=this.httpService.getGameDetail(id).subscribe((gameResp:Game)=>{
+      console.log(gameResp);
       this.game=gameResp;
       setTimeout(()=>{
         this.gameRating=this.game.metacritic;
