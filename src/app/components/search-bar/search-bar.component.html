@@ -1,7 +1,7 @@
 <div class="search-container">
-    <form class="search-form">
+    <form #searchfrm="ngForm" class="search-form" (ngSubmit)="onSubmit(searchfrm)">
         <span class="logo">Siri VGDB</span>
-        <input type="text" class="search-input" name="search" placeholder="search 500,000+ games">
+        <input type="text" class="search-input" name="search" ngModel placeholder="search 500,000+ games">
         <button class="search-button">Search</button>
     </form>
 </div>

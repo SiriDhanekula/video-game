@@ -7,7 +7,9 @@
             <div class="game-header">
                 <h1 class="game-header-title"> {{game.name}} </h1>
                 <h2 class="game-header-release-date">Release : {{game.released|date}}</h2>
-                <p class="game-header-genres">Adventure, Action, dummy</p>
+                <p class="game-header-genres">
+                    <span *ngFor="let genre of game.geners;let last=last">{{genre.name}}<span *ngIf="!last">,</span></span>
+                </p>
 <div class="game-gauge">
                     <mwl-gauge class="two"
                     [max]="100"
@@ -19,6 +21,7 @@
                     [animationDuration]="2"></mwl-gauge>
                 </div>
             </div>
+            <app-game-tabs [game]="game"></app-game-tabs>
         </div>
     </div>
 </div>
